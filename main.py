@@ -163,7 +163,8 @@ def main():
 
             house_consumption = round(random.gauss(avg_house_consumption, 0.03), 2)
             solar_generation = round(random.gauss(avg_solar_generation, 0.03), 2)
-
+            if solar_generation < 0:
+                solar_generation = 0
             grid_consumption = (
                 house_consumption - solar_generation
             )  # Si negativo se consume de la red, si p
