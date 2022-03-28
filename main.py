@@ -118,9 +118,21 @@ def main():
 
     number_of_devices = 10
     devices_list = list()
+    devices_names = [
+        "Lerma 01",
+        "Burgos 01",
+        "Reinosa 01",
+        "Oviedo 02",
+        "Oviedo 03",
+        "Oviedo 01",
+        "Gijón 01",
+        "Alicante 02",
+        "Alicante 01",
+        "Valencia 01",
+    ]
     # * Crear u obtener los dispositivos
-    for n in range(0, number_of_devices):
-        devices_list.append(TagoDevice(name=f"SIOT-DEVICE-{n}"))
+    for n, name in enumerate(devices_names):
+        devices_list.append(TagoDevice(name=name))
         devices_list[n].co2 = round(random.uniform(5, 60), 2)
         devices_list[n].euros = round(devices_list[n].co2 * 3.2, 2)
         devices_list[n].oil = round(devices_list[n].co2 * 0.0029, 2)
